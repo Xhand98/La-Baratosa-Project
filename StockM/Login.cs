@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 
 
+using LaBaratosa.Operations;
+
+
 namespace LaBaratosa
 {
     public partial class Login : Form
@@ -12,6 +15,7 @@ namespace LaBaratosa
 
 
         private static Database _database = new("DSN=LaBaratosa");
+
 
         public Login()
         {
@@ -74,6 +78,7 @@ namespace LaBaratosa
                     MessageBox.Show("Ha iniciado sesion de forma exitosa!");
                     Thread.Sleep(1000);
                     MainMenu formu = new MainMenu(username);
+
                     ManageEmployees manageEmployees = new ManageEmployees();
                     System.Windows.Forms.Timer fadeOutTimer = new System.Windows.Forms.Timer();
                     fadeOutTimer.Interval = 20;
@@ -104,6 +109,11 @@ namespace LaBaratosa
                     };
                     fadeOutTimer.Start();
 
+
+                    formu.Show();
+                    this.Hide();
+                    
+
                 }
                 else
                 {
@@ -131,9 +141,11 @@ namespace LaBaratosa
             }
         }
 
+
         private void txtUser_TextChanged(object sender, EventArgs e)
         {
 
         }
+
     }
 }
