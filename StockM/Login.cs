@@ -12,6 +12,7 @@ namespace LaBaratosa
 {
     public partial class Login : Form
     {
+        private static Database _database = new("DSN=LaBaratosa");
 
 
         private static Database _database = new("DSN=LaBaratosa");
