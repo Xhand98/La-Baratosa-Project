@@ -145,7 +145,9 @@ namespace GestionDeEmpleados
             LoadDataGridView();
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
-
+        }
     }
 }
